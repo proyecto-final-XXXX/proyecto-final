@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title>Proyecto Final</title>
+  <style>
+    body {
+      padding: 20px;
+      background-color: #f2f2f2; /* Fondo en color gris */
+    }
+    .container {
+      max-width: 600px;
+      background-color: #fff; /* Contenedor principal en color blanco */
+      padding: 20px;
+      border-radius: 5px;
+      margin: 0 auto;
+      margin-top: 100px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra al contenedor */
+    }
+    h3 {
+      text-align: center;
+      font-size: 30px;
+      color: #333; /* Color del título */
+      margin-bottom: 30px;
+    }
+    .options {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .btn {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3 style="font-family: Arial, sans-serif;">Proyecto Final</h3>
+    <div class="options">
+      <button class="btn waves-effect waves-light" onclick="openYoutube()">Link YouTube</button>
+      <a class="btn waves-effect waves-light" href="mailto:test@gmail.com">Link Correo</a>
+      <a class="btn waves-effect waves-light modal-trigger" href="#tableModal">Tabla Muestra</a>
+    </div>
+  </div>
+
+  <div id="youtubeModal" class="modal">
+    <div class="modal-content">
+      <h4>Video de YouTube</h4>
+      <p>Aquí puedes ver el video de YouTube:</p>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/sKUoseBmInA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
+  </div>
+
+  <div id="tableModal" class="modal">
+    <div class="modal-content">
+      <h4>Tabla Muestra</h4>
+      <table class="striped">
+        <tbody>
+          <tr>
+            <td>Lorem</td>
+            <td>Ipsum</td>
+            <td>Dolor</td>
+          </tr>
+          <tr>
+            <td>Sit</td>
+            <td>Amet</td>
+            <td>Consectetur</td>
+          </tr>
+          <tr>
+            <td>Adipiscing</td>
+            <td>Elit</td>
+            <td>Sed</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var modals = document.querySelectorAll('.modal');
+      M.Modal.init(modals);
+    });
+
+    function openYoutube() {
+      var modal = document.querySelector('#youtubeModal');
+      var instance = M.Modal.getInstance(modal);
+      instance.open();
+    }
+  </script>
+</body>
+</html>
